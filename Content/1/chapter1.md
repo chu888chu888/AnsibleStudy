@@ -175,6 +175,25 @@ root@hadoopmaster:/etc/ansible# ansible hadoop -m command -a 'uptime'
 
 192.168.1.76 | SUCCESS | rc=0 >>
  16:00:44 up 20 days,  5:25,  1 user,  load average: 0.00, 0.01, 0.05
+ 
+ 如果不进行修改ansible不会并发执行,建议加入-f参数进行并发执行
+ root@hadoopmaster:~# ansible hadoop -m command -a 'uptime' -f 10
+ 
+ 如果想要用密码执行的话,会采用
+ root@hadoopmaster:~# ansible hadoop -m shell -a "ls /home" -u root  -K -f 5
+SUDO password:
+192.168.1.159 | SUCCESS | rc=0 >>
+chu888chu888
+hadoop
+
+192.168.1.76 | SUCCESS | rc=0 >>
+chu888chu888
+hadoop
+
+192.168.1.166 | SUCCESS | rc=0 >>
+chu888chu888
+hadoop
+
 ```
 
 ###常用模块
