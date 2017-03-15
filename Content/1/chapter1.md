@@ -41,6 +41,8 @@ Ansible 支持异构IT环境 ：Ansible可以自动配置来自许多供应商�
 
 ```
 sudo aptitude install python-dev
+sudo apt-get install python-pip
+
 sudo pip install ansible -i https://pypi.tuna.tsinghua.edu.cn/simple
 sudo pip install markupsafe -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
